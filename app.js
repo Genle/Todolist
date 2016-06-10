@@ -18,7 +18,8 @@ app.use(session({secret: 'todolistsecret'}))
 
 .get('/', function(req,res){
 	res.render('home.ejs', {'title': 'Todolist'});
-});
+})
+.use(express.static(__dirname + '/'));
 
 
 app.listen(8080);
